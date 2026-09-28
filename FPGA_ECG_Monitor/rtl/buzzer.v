@@ -48,15 +48,15 @@ module buzzer #(
 )(
 
     // Main FPGA clock: 12 MHz
-    input clk,
+    input wire clk,
 
 
     // Reset the buzzer logic
-    input reset,
+    input wire reset,
 
 
     // 500 Hz timing pulse from sample_tick.v
-    input sample_tick,
+    input wire sample_tick,
 
 
     // One-clock pulse from beat_detect.v
@@ -64,7 +64,7 @@ module buzzer #(
     // Means:
     //
     // "A heartbeat was detected."
-    input beat,
+    input wire beat,
 
 
     // Digital signal that will eventually control

@@ -15,18 +15,18 @@ module beat_detect #(
 
 )(
     // Main FPGA clock: 12 MHz
-    input clk,
+    input wire clk,
 
     // Reset everything to a known starting state
-    input reset,
+    input wire reset,
 
     // ECG sample.
     //
     // signed means it can represent positive AND negative values.
-    input signed [15:0] sample,
+    input wire signed [15:0] sample,
 
     // Goes high for one FPGA clock whenever a NEW ECG sample arrives
-    input sample_valid,
+    input wire sample_valid,
 
     // Goes high for one FPGA clock when a heartbeat is detected
     output reg beat

@@ -7,19 +7,19 @@
 
 module xadc_reader (
 
-    input clk,  // "clk" is the FPGA's main 12 MHz clock.
-    input reset, // When reset = 1, we clear our stored values.
+    input wire clk,  // "clk" is the FPGA's main 12 MHz clock.
+    input wire reset, // When reset = 1, we clear our stored values.
 
     // This is the one-clock pulse produced by sample_tick.v, 500 times per second.
     // We use it to decide WHEN the rest of the ECG system receives a new measurement.
-    input sample_tick,
+    input wire sample_tick,
 
 
     // Positive side of our differential analog input.
     // VAUX = Auxiliary Analog Input
     // The AD8232 ECG signal ultimately enters the XADC here.
-    input vauxp, // P    = Positive
-    input vauxn, // N    = Negative
+    input wire vauxp, // P    = Positive
+    input wire vauxn, // N    = Negative
     
     output reg [11:0] sample, // The 12-bit ECG measurement that we give to the rest of our FPGA design.
 

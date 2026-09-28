@@ -12,19 +12,19 @@ module led_flash #(
 )(
 
     // Main FPGA clock: 12 MHz
-    input clk,
+    input wire clk,
 
     // Reset the module
-    input reset,
+    input wire reset,
 
     // One-clock pulse from sample_tick.v
     //
     // Happens 500 times per second.
-    input sample_tick,
+    input wire sample_tick,
 
     // One-clock pulse from beat_detect.v
     // Means:"A heartbeat was just detected."
-    input beat,
+    input wire beat,
     output reg led   // Drives the LED
 );
 
